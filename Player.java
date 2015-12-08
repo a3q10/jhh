@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -24,7 +27,7 @@ public class Player
 		System.out.println(msg);
 	}
 	
-	public void showPrompt()
+	public void showPrompt() throws IOException
 	{
 		System.out.print("> ");
 		String userResponse = this.input.nextLine();
@@ -67,6 +70,11 @@ public class Player
 		{
 			this.displayToUser("Saving the Cave");
 			this.displayToUser(CaveCore.theCave.toJSON().exportToJSON());
+			FileWriter fileWriter= new FileWriter(new File("/path/to/cavejson.txt"),false);
+			//"/path/to/cavejson.txt");
+    fileWriter.write(CaveCore.theCave.toJSON.toString());
+    
+    fileWriter.close();	
 		}
 		else
 		{

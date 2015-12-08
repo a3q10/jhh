@@ -3,6 +3,7 @@ public class Cave
 {
 	private String name;
 	private int startRoomID;
+	public Object toJSON;
 	
 	public Cave(String name, String filename)
 	{
